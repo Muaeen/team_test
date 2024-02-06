@@ -9,4 +9,7 @@ app = FastAPI()
 def main():
     return {"hi"}
 
+@app.get("/")
+def cak():
+    return 1 + 2
 # print(main())
