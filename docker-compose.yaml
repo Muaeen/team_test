@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  server:
+    image: python:3.11
+    container_name: team-test
+    working_dir: /app
+    ports:
+      - "7070:7070"
+    volumes:
+      - ./requirements.txt:/app/requirements.txt
+      - ./src:/app/src:rw.cached
+      - ./run.sh:/app/run.sh
+
+    entrypoint: ./run.sh
